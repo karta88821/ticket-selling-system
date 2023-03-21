@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Users</title>
+        <div th:replace="fragments/header :: header"></div>
+    </head>
+    
+    <body>
+        <div th:replace="fragments/nav :: nav", th:with="activeLink=${activeLink}"></div>
+
+        <div class="container" >
+
+          <h1>Users</h1>
+      
+            <div>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Account</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Role</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr th:each="user: ${users}">
+                        <td th:text="${user.id}">ID</td>
+                        <td th:text="${user.account}">Account</td>
+                        <td th:text="${user.name}">Name</td>
+                        <td th:text="${user.mail}">Mail</td>
+                        <td th:text="${user.role.name}">Role</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        
+    </body>
+</html>

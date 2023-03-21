@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Home</title>
+        <div th:replace="fragments/header :: header"></div>
+    </head>
+    <body>
+        <div th:replace="fragments/nav :: nav", th:with="activeLink=${activeLink}"></div>
+    </body>
+</html>

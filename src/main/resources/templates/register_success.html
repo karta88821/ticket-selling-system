@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registerion Success</title>
+        <div th:replace="fragments/header :: header"></div>
+    </head>
+    <body>
+        <div th:replace="fragments/nav :: nav", th:with="activeLink=${activeLink}"></div>
+        <div class="container text-center">
+            <div>
+                <h3>You have signed up successfully!</h3>
+            </div>
+            <div>
+                <h3>
+                    <a th:href="@{/login}">Click here to login</a>
+                </h3>
+            </div>
+        </div>
+    </body>
+</html>
