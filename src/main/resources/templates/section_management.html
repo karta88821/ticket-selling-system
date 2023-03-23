@@ -15,7 +15,6 @@
                 <div class="col">
                     <h1>Section Management</h1>
                 </div>
-
             </div>
         </div>
         <form th:action="@{/events/{event_id}/sections/do-bind-section(event_id=${event_id})}" th:object="${section}" id="bind-section-form" method="post">
@@ -46,15 +45,17 @@
                         <th scope="col">Total row</th>
                         <th scope="col">Total number per row</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Available seats</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="seat: ${seats}">
-                        <td th:text="${seat.section.id}">ID</td>
-                        <td th:text="${seat.section.name}">Name</td>
-                        <td th:text="${seat.section.totalRow}">Total Row</td>
-                        <td th:text="${seat.section.totalNumberPerRow}">Total number per row</td>
-                        <td th:text="${seat.section.price}">Price</td>
+                    <tr th:each="sectionStatus: ${sectionStatuses}">
+                        <td th:text="${sectionStatus.sectionID}">ID</td>
+                        <td th:text="${sectionStatus.sectionName}">Name</td>
+                        <td th:text="${sectionStatus.totalRow}">Total Row</td>
+                        <td th:text="${sectionStatus.totalNumberPerRow}">Total number per row</td>
+                        <td th:text="${sectionStatus.price}">Price</td>
+                        <td th:text="${sectionStatus.getAvSeats()}">Av count</td>
                         <td>
                             <a th:href="@{/events/${event.id}/section_management}">
                                 <button type="button" class="btn btn-danger">Delete</button>

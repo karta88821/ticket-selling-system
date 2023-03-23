@@ -1,5 +1,6 @@
 package com.daniel_liao.ticketsellingsystem.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,20 +66,5 @@ public class AppController {
         model.addAttribute("sections", sections);
         model.addAttribute("activeLink", "Sections");
         return "sections";
-    }
-
-    @GetMapping("/tickets/select-event")
-    public String selectEventPage(Model model) {
-        return "select-order";
-    }
-
-    @GetMapping("/tickets/select-section-and-seat")
-    public String selectSectionAndSeatPage(Model model) {
-        return "select-section-and-seat";
-    }
-
-    @GetMapping("/tickets/all")
-    public String ticketsListPage(Model model) {
-        return "tickets";
     }
 }

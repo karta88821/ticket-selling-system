@@ -1,6 +1,6 @@
 package com.daniel_liao.ticketsellingsystem.entity;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,24 +13,18 @@ import javax.persistence.OneToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class Seat {
+@ToString
+public class Ticket {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column
-    private Integer row;
-
-    @Column
-    private Integer number;
-
-    @Column
-    private Boolean availability;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "event_id", referencedColumnName = "id")
@@ -40,6 +34,11 @@ public class Seat {
     @JoinColumn(name = "section_id", referencedColumnName = "id")
     private Section section;
 
-    @OneToOne(mappedBy = "seat")
-    private Ticket ticket;
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "seat_id", referencedColumnName = "id")
+    private Seat seat;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
 }

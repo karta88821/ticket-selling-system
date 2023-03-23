@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Tickets</title>
+    <div th:replace="fragments/header :: header"></div>
+</head>
+
+<body>
+    <div th:replace="fragments/nav :: nav" , th:with="activeLink=${activeLink}"></div>
+
+    <div class="container">
+
+        <h1>Tickets</h1>
+
+        <div>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Event name</th>
+                        <th scope="col">Event date</th>
+                        <th scope="col">Section name</th>
+                        <th scope="col">Seat</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="ticket: ${tickets}">
+                        <td th:text="${ticket.event.name}"></td>
+                        <td th:text="${ticket.event.date}"></td>
+                        <td th:text="${ticket.section.name}"></td>
+                        <td th:text="|${ticket.seat.row}-${ticket.seat.number}|"></td>
+                        <td th:text="${ticket.section.price}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

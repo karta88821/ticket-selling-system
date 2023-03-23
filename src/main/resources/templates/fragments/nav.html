@@ -18,6 +18,12 @@
                   <a class="nav-link" href="/home">Home</a>
                 </li>
                 -->
+                <li th:class="${#strings.equals(activeLink, 'Get a ticket')} ? 'nav-item active' : 'nav-item'">
+                  <a class="nav-link" href="/tickets/events">Get a ticket</a>
+                </li>
+                <li th:class="${#strings.equals(activeLink, 'Tickets')} ? 'nav-item active' : 'nav-item'">
+                  <a class="nav-link" href="/tickets/all">Tickets</a>
+                </li>
                 <li th:class="${#strings.equals(activeLink, 'Users')} ? 'nav-item active' : 'nav-item'">
                     <a class="nav-link" href="/users/all">Users</a>
                 </li>

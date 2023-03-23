@@ -20,6 +20,7 @@ import org.springframework.test.annotation.Rollback;
 import com.daniel_liao.ticketsellingsystem.entity.Event;
 import com.daniel_liao.ticketsellingsystem.entity.Seat;
 import com.daniel_liao.ticketsellingsystem.entity.Section;
+import com.daniel_liao.ticketsellingsystem.entity.User;
 import com.daniel_liao.ticketsellingsystem.repository.EventRepository;
 import com.daniel_liao.ticketsellingsystem.repository.SeatRepository;
 import com.daniel_liao.ticketsellingsystem.repository.SectionRepository;
@@ -104,5 +105,19 @@ public class SeatRepositoryTest {
 
         List<Seat> savedSeats = seatRepo.saveAll(seats);
         assertEquals(savedSeats.size(), seats.size());
+    }
+
+    @Test
+    public void updateSeatAvailablity() {
+        Event event = new Event();
+        event.setId(3);
+
+        Section section = new Section();
+        section.setId(1);
+
+        User user = new User();
+        user.setId(7);
+
+        seatRepo.updateAvailablityWithNumber(3, 1, 1, 1);
     }
 }

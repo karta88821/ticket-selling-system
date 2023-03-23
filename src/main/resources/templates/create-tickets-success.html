@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Order Success</title>
+        <div th:replace="fragments/header :: header"></div>
+    </head>
+    <body>
+        <div th:replace="fragments/nav :: nav", th:with="activeLink=${activeLink}"></div>
+        <div class="container text-center">
+            <div>
+                <h3>You have gotten tickets successfully!</h3>
+            </div>
+            <div>
+                <h3>
+                    <a th:href="@{/tickets/all}">Click here to see your tickets</a>
+                </h3>
+            </div>
+        </div>
+    </body>
+</html>

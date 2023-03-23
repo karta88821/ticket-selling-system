@@ -32,4 +32,7 @@ public class Event {
 
     @OneToMany(mappedBy = "event")
     private List<Seat> seats;
+
+    @OneToMany(mappedBy = "event")
+    private List<Ticket> tickets;
 }

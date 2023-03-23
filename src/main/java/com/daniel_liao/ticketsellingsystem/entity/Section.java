@@ -38,4 +38,7 @@ public class Section {
 
     @OneToMany(mappedBy = "section")
     private List<Seat> seats;
+
+    @OneToMany(mappedBy = "section")
+    private List<Ticket> tickets;
 }

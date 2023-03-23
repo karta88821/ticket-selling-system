@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.daniel_liao.ticketsellingsystem.ISectionStatus;
 import com.daniel_liao.ticketsellingsystem.entity.Event;
 import com.daniel_liao.ticketsellingsystem.entity.Seat;
 import com.daniel_liao.ticketsellingsystem.entity.Section;
@@ -48,8 +49,11 @@ public class EventController {
         model.addAttribute("sectionsNotSelect", sectionsNotSelect);
         model.addAttribute("section", selected_section);
 
-        List<Seat> seatInDiffSections = seatRepository.findSeatsInDiffSectionsForAnEvent(id);
-        model.addAttribute("seats", seatInDiffSections);
+        List<ISectionStatus> sectionStatuses = seatRepository.findAvailableSeatsForAnEvent(id);
+        for (ISectionStatus sectionStatus: sectionStatuses) {
+            System.out.println(sectionStatus.getAvSeats());
+        }
+        model.addAttribute("sectionStatuses", sectionStatuses);
 
         return "section_management";
     }
@@ -70,7 +74,7 @@ public class EventController {
                 Seat seat = new Seat();
                 seat.setRow(i);
                 seat.setNumber(j);
-                seat.setAvailability(false);
+                seat.setAvailability(true);
                 seat.setEvent(event);
                 seat.setSection(section);
                 seats.add(seat);
