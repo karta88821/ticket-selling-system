@@ -61,7 +61,6 @@ public class EventController {
 
     @PostMapping("/{event_id}/sections/do-bind-section")
     public String doBindSection(@PathVariable(value = "event_id") Integer id, Section selectedSection) {
-        System.out.println("Select section id: " + selectedSection.toString());
 
         Section section = sectionRepo.findById(selectedSection.getId()).get();
 
@@ -69,7 +68,8 @@ public class EventController {
         event.setId(id);
 
         List<Seat> seats = new ArrayList<>(); 
-         
+        
+        // add all of the seats to the event
         for (int i=1; i<=section.getTotalRow(); i++) {
             for (int j=1; j<=section.getTotalNumberPerRow(); j++) {
                 Seat seat = new Seat();

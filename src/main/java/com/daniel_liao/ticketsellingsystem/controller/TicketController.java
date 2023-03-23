@@ -26,7 +26,6 @@ import com.daniel_liao.ticketsellingsystem.entity.User;
 import com.daniel_liao.ticketsellingsystem.form.SelectSectionForm;
 import com.daniel_liao.ticketsellingsystem.repository.EventRepository;
 import com.daniel_liao.ticketsellingsystem.repository.SeatRepository;
-import com.daniel_liao.ticketsellingsystem.repository.SectionRepository;
 import com.daniel_liao.ticketsellingsystem.repository.TicketRepository;
 import com.daniel_liao.ticketsellingsystem.repository.UserRepository;
 
@@ -137,7 +136,7 @@ public class TicketController {
         Section section = new Section();
         section.setId(sectionID);
 
-        // set availability to 1 for each selected seat
+        // set availability to 0 for each selected seat
         // create tickets for each seat (assign to the user)
         for (Seat seat: ticketCheckout.getSelectedSeats()) {
             seatRepo.updateAvailablityWithNumber(eventID, sectionID, seat.getRow(), seat.getNumber());
