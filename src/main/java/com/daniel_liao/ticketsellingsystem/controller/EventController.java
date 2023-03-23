@@ -41,8 +41,9 @@ public class EventController {
     }
 
     @GetMapping("/{event_id}/sections/all")
-    public String eventAddSectionPage(@PathVariable(value = "event_id") Integer id, Model model) {
-        model.addAttribute("event_id", id);
+    public String eventBindSectionPage(@PathVariable(value = "event_id") Integer id, Model model) {
+        Event event = eventRepo.findById(id).get();
+        model.addAttribute("event", event);
 
         List<Section> sectionsNotSelect = sectionRepo.findSectionsEventNotSelect(id);
         Section selected_section = new Section();
@@ -55,7 +56,7 @@ public class EventController {
         }
         model.addAttribute("sectionStatuses", sectionStatuses);
 
-        return "section_management";
+        return "event-bind-sections";
     }
 
     @PostMapping("/{event_id}/sections/do-bind-section")

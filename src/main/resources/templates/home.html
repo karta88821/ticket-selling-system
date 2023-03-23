@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Home</title>
-        <div th:replace="fragments/header :: header"></div>
-    </head>
-    <body>
-        <div th:replace="fragments/nav :: nav", th:with="activeLink=${activeLink}"></div>
-    </body>
+
+<head>
+    <title>Home</title>
+    <div th:replace="fragments/header :: header"></div>
+</head>
+
+<body>
+    <div th:replace="fragments/nav :: nav" , th:with="activeLink=${activeLink}"></div>
+
+    <div class="container">
+        <div class="row" style="margin-top: 24px;">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Get tickets</h5>
+                        <p class="card-text">Get start to get tickets!</p>
+                        <a th:href="@{/tickets/events}" class="btn btn-primary">Get tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">View your tickets</h5>
+                        <p class="card-text">Let's go see how many tickets you have!</p>
+                        <a th:href="@{/tickets/all}" class="btn btn-primary">View your tickets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 24px;">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Events</h5>
+                        <p class="card-text">Let's go to see events!</p>
+                        <a th:href="@{/events/all}" class="btn btn-primary">Events</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div sec:authorize="hasAuthority('ROLE_ADMIN')" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sections</h5>
+                        <p class="card-text">View sections</p>
+                        <a th:href="@{/sections/all}" class="btn btn-primary">Sections</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 24px;">
+            <div class="col-sm-6">
+                <div sec:authorize="hasAuthority('ROLE_ADMIN')" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">User</h5>
+                        <p class="card-text">View users</p>
+                        <a th:href="@{/users/all}" class="btn btn-primary">Users</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
