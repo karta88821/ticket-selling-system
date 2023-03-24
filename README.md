@@ -29,4 +29,4 @@ This project has serveral features as follows:
 
 ## Database Schema
 
-![Screenshot](db_schema.png)
+![image]([db_schema.png](https://github.com/karta88821/ticket-selling-system/blob/main/db_schema.png.png))
