@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Registerion</title>
-        <div th:replace="fragments/header :: header"></div>
-    </head>
-    <body>
-        <div th:replace="fragments/nav :: nav", th:with="activeLink=${activeLink}"></div>
-        <div class="container text-center">
-          <div>
-              <h1>Registerion</h1>
-          </div>
-          <form th:action="@{/do-register}" method="post" th:object="${user}">
-              <div class="form-group row">
-                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Account</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control form-control-lg" id="colFormLabelLg" th:field="*{account}" required 
-                  minlength="4" maxlength="8" />
-                </div>
-              </div>
-              <div class="form-group row">
-                  <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Password</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control form-control-lg" id="colFormLabelLg" th:field="*{password}" required
-                    minlength="4" maxlength="8"/>
-                  </div>
-              </div>
-              <div class="form-group row">
-                  <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Mail</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg" th:field="*{mail}" required>
-                  </div>
-              </div>
-              <div class="form-group row">
-                  <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control form-control-lg" id="colFormLabelLg" th:field="*{name}" required>
-                  </div>
-              </div>
-              <div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
-              </div>
 
-          </form>
-          
+<head>
+  <title>Registerion</title>
+  <div th:replace="fragments/header :: header"></div>
+</head>
+
+<body>
+  <div th:replace="fragments/nav :: nav" , th:with="activeLink=${activeLink}"></div>
+  <div class="container text-center">
+    <div>
+      <h1>Registerion</h1>
+    </div>
+    <form th:action="@{/do-register}" method="post" th:object="${user}">
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Account</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-lg" id="colFormLabelLg" th:field="*{account}" required />
+        </div>
       </div>
-    </body>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control form-control-lg" id="colFormLabelLg" th:field="*{password}"
+            required/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Mail</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control form-control-lg" id="colFormLabelLg" th:field="*{mail}" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-lg" id="colFormLabelLg" th:field="*{name}" required>
+        </div>
+      </div>
+
+      <div th:if="${#fields.hasAnyErrors()}" class="form-group row" style="margin-left: 12px;">
+        <ul>
+          <li th:each="err : ${#fields.allErrors()}" th:text="${err}" class="error">
+        </ul>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </div>
+
+    </form>
+
+  </div>
+</body>
+
 </html>

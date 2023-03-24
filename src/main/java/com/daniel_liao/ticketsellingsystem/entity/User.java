@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,25 +30,23 @@ public class User {
     private Integer id;
 
     @Column
+    @NotEmpty(message = "Name can't be empty.")
     private String name;
 
     @Column
+    @NotEmpty(message = "Account can't be empty.")
+    @Size(min = 6, max = 12, message = "The length of the account must be between 6 and 12.")
     private String account;
 
     @Column
+    @NotEmpty(message = "Password can't be empty.")
     private String password;
 
     @Column
+    @NotEmpty(message = "Email can't be empty.")
     private String mail;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id", referencedColumnName = "id")
-    /* 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "users_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    */
     private Role role;
 }

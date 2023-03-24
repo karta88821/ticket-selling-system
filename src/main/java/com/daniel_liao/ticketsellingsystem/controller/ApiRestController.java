@@ -6,9 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,10 +33,12 @@ public class ApiRestController {
     @Autowired
     private SectionRepository sectionRepo;
 
+    /* 
     @PostMapping("/add_events")
-    public List<Event> handleAddEvents(@RequestBody EventForm eventForm) {
-
-        System.out.println(eventForm.toString());
+    public List<Event> handleAddEvents(@Valid @RequestBody EventForm eventForm, BindingResult result) {
+        if (result.hasErrors()) {
+            return new ArrayList<>();
+        }
 
         List<Event> events = new ArrayList<>();
 
@@ -48,12 +53,5 @@ public class ApiRestController {
 
         return savedEvents;
     }
-
-    @PostMapping("/add_section")
-    public Section handleAddEvents(@RequestBody Section section) {
-
-        Section savedSection = sectionRepo.save(section);
-
-        return savedSection;
-    }
+    */
 }

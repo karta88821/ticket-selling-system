@@ -24,6 +24,15 @@
       </div>
     </div>
 
+    <div th:if="${form_error != null}" class="alert alert-danger alert-dismissible fade show" role="alert">
+      <ul>
+        <li th:each="err : ${form_error}" th:text="${err}" class="error">
+      </ul>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
     <div th:replace="fragments/modals :: add-event">modal</div>
 
     <div style="margin-bottom: 24px;">
@@ -61,7 +70,7 @@
     daysOfWeekHighlighted: [0, 6]
   });
 
-
+  /*
   $("#new-event-form").submit(function (event) {
     let formData = {
       name: $("#event-name").val(),
@@ -94,6 +103,7 @@
 
     event.preventDefault();
   });
+  */
 </script>
 
 </html>
