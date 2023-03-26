@@ -35,18 +35,20 @@ public class EventController {
 
     @Autowired
     private SeatRepository seatRepository;
+
+    @Autowired
+    private EventService eventService;
     
     @GetMapping("/all")
     public String eventsListPage(Model model) {
-        List<Event> events = eventRepo.findAll();
+        List<Event> events = eventService.getAllEvents();
         model.addAttribute("events", events);
         model.addAttribute("activeLink", "Events");
         model.addAttribute("eventForm", new EventForm());
-        System.out.println("Calling from db");
         return "events";
     }
 
-    @PostMapping("/do-add-events")
+    @PostMapping("/all")
     public String handleAddEvents(@Valid EventForm eventForm, BindingResult result, Model model) throws ParseException {
         if (result.hasErrors()) {
             List<String> errorStrings = new ArrayList<>();
@@ -54,32 +56,18 @@ public class EventController {
                 errorStrings.add(error.getDefaultMessage());
             }
             model.addAttribute("form_error", errorStrings);
-            model.addAttribute("events", eventRepo.findAll()); // use Redis!!!
+            model.addAttribute("events", eventService.getAllEvents()); 
             return "events";
         }
 
-        System.out.println(eventForm.toString());
-        
-        List<Event> events = new ArrayList<>(); 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-
-        for (String dateString: eventForm.getDates()) {
-            Event newEvent = new Event();
-            newEvent.setName(eventForm.getName());
-            java.util.Date date = format.parse(dateString);
-            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-            newEvent.setDate(sqlDate);
-            events.add(newEvent);
-        }
-
-        eventRepo.saveAll(events);
+        eventService.addNewEvents(eventForm);
 
         return "redirect:/events/all";
     }
 
     @GetMapping("/{event_id}/sections/all")
     public String eventBindSectionPage(@PathVariable(value = "event_id") Integer id, Model model) {
-        Event event = eventRepo.findById(id).get();
+        Event event = eventService.getEventById(id);
         model.addAttribute("event", event);
 
         List<Section> sectionsNotSelect = sectionRepo.findSectionsEventNotSelect(id);
@@ -88,9 +76,6 @@ public class EventController {
         model.addAttribute("section", selected_section);
 
         List<ISectionStatus> sectionStatuses = seatRepository.findAvailableSeatsForAnEvent(id);
-        for (ISectionStatus sectionStatus: sectionStatuses) {
-            System.out.println(sectionStatus.getAvSeats());
-        }
         model.addAttribute("sectionStatuses", sectionStatuses);
 
         return "event-bind-sections";

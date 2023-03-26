@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.daniel_liao.ticketsellingsystem.ISectionStatus;
-import com.daniel_liao.ticketsellingsystem.TicketCheckout;
 import com.daniel_liao.ticketsellingsystem.event.Event;
 import com.daniel_liao.ticketsellingsystem.event.EventRepository;
 import com.daniel_liao.ticketsellingsystem.event.SelectSectionForm;

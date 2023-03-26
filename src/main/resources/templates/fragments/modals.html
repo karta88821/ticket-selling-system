@@ -18,7 +18,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="new-event-form" method="post" th:action="@{/events/do-add-events}" th:object="${eventForm}">
+                    <form id="new-event-form" method="post" th:action="@{/events/all}" th:object="${eventForm}">
                         <div class="form-group">
                             <label for="event-name" class="col-form-label">Event name:</label>
                             <input type="text" class="form-control" id="event-name" th:field="*{name}">

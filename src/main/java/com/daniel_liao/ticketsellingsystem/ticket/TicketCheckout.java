@@ -1,8 +1,6 @@
-package com.daniel_liao.ticketsellingsystem;
+package com.daniel_liao.ticketsellingsystem.ticket;
 
 import java.util.List;
-
-import com.daniel_liao.ticketsellingsystem.ticket.Seat;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
