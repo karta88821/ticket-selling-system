@@ -20,7 +20,6 @@ import com.daniel_liao.ticketsellingsystem.ISectionStatus;
 import com.daniel_liao.ticketsellingsystem.TicketCheckout;
 import com.daniel_liao.ticketsellingsystem.entity.Event;
 import com.daniel_liao.ticketsellingsystem.entity.Seat;
-import com.daniel_liao.ticketsellingsystem.entity.Section;
 import com.daniel_liao.ticketsellingsystem.entity.Ticket;
 import com.daniel_liao.ticketsellingsystem.entity.User;
 import com.daniel_liao.ticketsellingsystem.form.SelectSectionForm;
@@ -28,6 +27,7 @@ import com.daniel_liao.ticketsellingsystem.repository.EventRepository;
 import com.daniel_liao.ticketsellingsystem.repository.SeatRepository;
 import com.daniel_liao.ticketsellingsystem.repository.TicketRepository;
 import com.daniel_liao.ticketsellingsystem.repository.UserRepository;
+import com.daniel_liao.ticketsellingsystem.section.Section;
 
 
 @Controller

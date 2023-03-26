@@ -1,4 +1,4 @@
-package com.daniel_liao.ticketsellingsystem.service;
+package com.daniel_liao.ticketsellingsystem.section;
 
 import java.util.List;
 
@@ -7,9 +7,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import com.daniel_liao.ticketsellingsystem.entity.Section;
 import com.daniel_liao.ticketsellingsystem.repository.EventRepository;
-import com.daniel_liao.ticketsellingsystem.repository.SectionRepository;
 
 @Service
 public class SectionService {

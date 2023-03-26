@@ -16,12 +16,12 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.daniel_liao.ticketsellingsystem.entity.Section;
 import com.daniel_liao.ticketsellingsystem.entity.User;
 import com.daniel_liao.ticketsellingsystem.repository.RoleRepository;
-import com.daniel_liao.ticketsellingsystem.repository.SectionRepository;
 import com.daniel_liao.ticketsellingsystem.repository.UserRepository;
-import com.daniel_liao.ticketsellingsystem.service.SectionService;
+import com.daniel_liao.ticketsellingsystem.section.Section;
+import com.daniel_liao.ticketsellingsystem.section.SectionRepository;
+import com.daniel_liao.ticketsellingsystem.section.SectionService;
 
 @Controller
 public class AppController {

@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 //@ComponentScan("com.daniel_liao.ticketsellingsystem.configuration")
-@EnableJpaRepositories(basePackages = {"com.daniel_liao.ticketsellingsystem.repository"})
-@EntityScan("com.daniel_liao.ticketsellingsystem.entity")
+@EnableJpaRepositories(basePackages = {"com.daniel_liao.ticketsellingsystem.repository", "com.daniel_liao.ticketsellingsystem.section"})
+@EntityScan(basePackages = {"com.daniel_liao.ticketsellingsystem.entity", "com.daniel_liao.ticketsellingsystem.section"})
 public class SharedConfiguration {
     
 }

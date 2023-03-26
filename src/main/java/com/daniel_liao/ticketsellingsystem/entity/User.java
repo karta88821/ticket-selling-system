@@ -1,5 +1,6 @@
 package com.daniel_liao.ticketsellingsystem.entity;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
@@ -24,7 +25,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

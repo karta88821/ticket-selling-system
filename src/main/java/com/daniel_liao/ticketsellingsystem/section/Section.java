@@ -1,4 +1,4 @@
-package com.daniel_liao.ticketsellingsystem.entity;
+package com.daniel_liao.ticketsellingsystem.section;
 
 import java.io.Serializable;
 import java.util.List;
@@ -14,6 +14,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
+
+import com.daniel_liao.ticketsellingsystem.entity.Seat;
+import com.daniel_liao.ticketsellingsystem.entity.Ticket;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

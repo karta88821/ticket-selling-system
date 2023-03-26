@@ -22,11 +22,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.daniel_liao.ticketsellingsystem.ISectionStatus;
 import com.daniel_liao.ticketsellingsystem.entity.Event;
 import com.daniel_liao.ticketsellingsystem.entity.Seat;
-import com.daniel_liao.ticketsellingsystem.entity.Section;
 import com.daniel_liao.ticketsellingsystem.form.EventForm;
 import com.daniel_liao.ticketsellingsystem.repository.EventRepository;
 import com.daniel_liao.ticketsellingsystem.repository.SeatRepository;
-import com.daniel_liao.ticketsellingsystem.repository.SectionRepository;
+import com.daniel_liao.ticketsellingsystem.section.Section;
+import com.daniel_liao.ticketsellingsystem.section.SectionRepository;
 
 @Controller
 @RequestMapping("/events")

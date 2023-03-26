@@ -9,8 +9,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.test.annotation.Rollback;
 
-import com.daniel_liao.ticketsellingsystem.entity.Section;
-import com.daniel_liao.ticketsellingsystem.repository.SectionRepository;
+import com.daniel_liao.ticketsellingsystem.section.Section;
+import com.daniel_liao.ticketsellingsystem.section.SectionRepository;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)

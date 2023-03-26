@@ -1,4 +1,4 @@
-package com.daniel_liao.ticketsellingsystem.controller;
+package com.daniel_liao.ticketsellingsystem.section;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.daniel_liao.ticketsellingsystem.entity.Section;
-import com.daniel_liao.ticketsellingsystem.service.SectionService;
 
 @Controller
 @RequestMapping("/sections")

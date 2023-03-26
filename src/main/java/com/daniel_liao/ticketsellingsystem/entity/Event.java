@@ -1,5 +1,6 @@
 package com.daniel_liao.ticketsellingsystem.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
@@ -18,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Event {
+public class Event implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
