@@ -57,7 +57,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="new-section-form" method="post" th:action="@{/sections/do-add-section}" th:object="${section}">
+                    <form id="new-section-form" method="post" th:action="@{/sections/all}" th:object="${section}">
                         <div class="form-group">
                             <label for="section-name" class="col-form-label">Name:</label>
                             <input type="text" class="form-control" id="section-name" th:field="*{name}">

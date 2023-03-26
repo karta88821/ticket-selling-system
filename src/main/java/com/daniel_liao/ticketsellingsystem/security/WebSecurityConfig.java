@@ -49,7 +49,7 @@ public class WebSecurityConfig {
         http.csrf().disable()
         .authorizeRequests()
         .antMatchers("/users/**").hasAnyAuthority("ROLE_ADMIN")
-        .antMatchers("/api/**", "/events/**", "/sections/**", "/tickets/**").authenticated()
+        .antMatchers("/events/**", "/sections/**", "/tickets/**").authenticated()
         .anyRequest().permitAll()
         .and()
         .formLogin()

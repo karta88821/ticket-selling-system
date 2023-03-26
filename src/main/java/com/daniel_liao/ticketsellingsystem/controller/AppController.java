@@ -21,6 +21,7 @@ import com.daniel_liao.ticketsellingsystem.entity.User;
 import com.daniel_liao.ticketsellingsystem.repository.RoleRepository;
 import com.daniel_liao.ticketsellingsystem.repository.SectionRepository;
 import com.daniel_liao.ticketsellingsystem.repository.UserRepository;
+import com.daniel_liao.ticketsellingsystem.service.SectionService;
 
 @Controller
 public class AppController {
@@ -36,6 +37,9 @@ public class AppController {
 
     @Autowired
     private SectionRepository sectionRepo;
+
+    @Autowired
+    private SectionService sectionService;
 
     @GetMapping("/home")
     public String homePage(Model model) {
@@ -68,33 +72,4 @@ public class AppController {
         return "users";
     }
 
-    @GetMapping("/sections/all")
-    public String sectionsListPage(Model model) {
-        List<Section> sections = sectionRepo.findAll();
-        model.addAttribute("sections", sections);
-        model.addAttribute("activeLink", "Sections");
-        Section section = new Section();
-        model.addAttribute("section", section);
-        return "sections";
-    }
-
-    @PostMapping("/sections/do-add-section")
-    public String handleAddEvents(@Valid Section section, BindingResult result, Model model) {
-
-        if (result.hasErrors()) {
-
-            List<String> errorStrings = new ArrayList<>();
-            for (FieldError error : result.getFieldErrors()) {
-                errorStrings.add(error.getDefaultMessage());
-            }
-            
-            model.addAttribute("form_error", errorStrings);
-            model.addAttribute("sections", sectionRepo.findAll()); // use Redis !!!
-            return "sections";
-        }
-
-        sectionRepo.save(section);
-
-        return "redirect:/sections/all";
-    }
 }
