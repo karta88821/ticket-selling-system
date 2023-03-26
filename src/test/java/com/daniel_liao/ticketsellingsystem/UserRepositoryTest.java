@@ -18,10 +18,10 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.daniel_liao.ticketsellingsystem.entity.Role;
-import com.daniel_liao.ticketsellingsystem.entity.User;
-import com.daniel_liao.ticketsellingsystem.repository.RoleRepository;
-import com.daniel_liao.ticketsellingsystem.repository.UserRepository;
+import com.daniel_liao.ticketsellingsystem.security.Role;
+import com.daniel_liao.ticketsellingsystem.security.RoleRepository;
+import com.daniel_liao.ticketsellingsystem.security.User;
+import com.daniel_liao.ticketsellingsystem.security.UserRepository;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)

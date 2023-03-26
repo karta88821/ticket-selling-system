@@ -1,4 +1,4 @@
-package com.daniel_liao.ticketsellingsystem.entity;
+package com.daniel_liao.ticketsellingsystem.security;
 
 import java.io.Serializable;
 import java.util.List;

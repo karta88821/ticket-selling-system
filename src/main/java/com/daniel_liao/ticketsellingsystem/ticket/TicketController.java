@@ -1,4 +1,4 @@
-package com.daniel_liao.ticketsellingsystem.controller;
+package com.daniel_liao.ticketsellingsystem.ticket;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -18,16 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.daniel_liao.ticketsellingsystem.ISectionStatus;
 import com.daniel_liao.ticketsellingsystem.TicketCheckout;
-import com.daniel_liao.ticketsellingsystem.entity.Event;
-import com.daniel_liao.ticketsellingsystem.entity.Seat;
-import com.daniel_liao.ticketsellingsystem.entity.Ticket;
-import com.daniel_liao.ticketsellingsystem.entity.User;
-import com.daniel_liao.ticketsellingsystem.form.SelectSectionForm;
-import com.daniel_liao.ticketsellingsystem.repository.EventRepository;
-import com.daniel_liao.ticketsellingsystem.repository.SeatRepository;
-import com.daniel_liao.ticketsellingsystem.repository.TicketRepository;
-import com.daniel_liao.ticketsellingsystem.repository.UserRepository;
+import com.daniel_liao.ticketsellingsystem.event.Event;
+import com.daniel_liao.ticketsellingsystem.event.EventRepository;
+import com.daniel_liao.ticketsellingsystem.event.SelectSectionForm;
 import com.daniel_liao.ticketsellingsystem.section.Section;
+import com.daniel_liao.ticketsellingsystem.security.User;
+import com.daniel_liao.ticketsellingsystem.security.UserRepository;
 
 
 @Controller

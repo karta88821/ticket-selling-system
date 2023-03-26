@@ -1,12 +1,10 @@
-package com.daniel_liao.ticketsellingsystem.repository;
+package com.daniel_liao.ticketsellingsystem.event;
 
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import com.daniel_liao.ticketsellingsystem.entity.Event;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event, Integer> {

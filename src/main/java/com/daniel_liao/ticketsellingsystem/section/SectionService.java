@@ -7,7 +7,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import com.daniel_liao.ticketsellingsystem.repository.EventRepository;
+import com.daniel_liao.ticketsellingsystem.event.EventRepository;
 
 @Service
 public class SectionService {

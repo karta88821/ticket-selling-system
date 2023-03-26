@@ -15,8 +15,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 
-import com.daniel_liao.ticketsellingsystem.entity.Seat;
-import com.daniel_liao.ticketsellingsystem.entity.Ticket;
+import com.daniel_liao.ticketsellingsystem.ticket.Seat;
+import com.daniel_liao.ticketsellingsystem.ticket.Ticket;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

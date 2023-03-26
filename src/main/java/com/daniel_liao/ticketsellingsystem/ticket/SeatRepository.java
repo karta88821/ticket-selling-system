@@ -1,4 +1,4 @@
-package com.daniel_liao.ticketsellingsystem.repository;
+package com.daniel_liao.ticketsellingsystem.ticket;
 
 import java.util.List;
 
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.daniel_liao.ticketsellingsystem.ISectionStatus;
-import com.daniel_liao.ticketsellingsystem.entity.Seat;
 
 @Repository
 public interface SeatRepository extends JpaRepository<Seat, Integer> {

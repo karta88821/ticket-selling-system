@@ -8,8 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.daniel_liao.ticketsellingsystem.entity.User;
-
 public class CustomUserDetails implements UserDetails {
 
     private String ROLE_PREFIX = "ROLE_";

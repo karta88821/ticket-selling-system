@@ -1,4 +1,4 @@
-package com.daniel_liao.ticketsellingsystem.entity;
+package com.daniel_liao.ticketsellingsystem.event;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import com.daniel_liao.ticketsellingsystem.ticket.Seat;
+import com.daniel_liao.ticketsellingsystem.ticket.Ticket;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.daniel_liao.ticketsellingsystem.form;
+package com.daniel_liao.ticketsellingsystem.event;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -17,13 +17,13 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
-import com.daniel_liao.ticketsellingsystem.entity.Event;
-import com.daniel_liao.ticketsellingsystem.entity.Seat;
-import com.daniel_liao.ticketsellingsystem.entity.User;
-import com.daniel_liao.ticketsellingsystem.repository.EventRepository;
-import com.daniel_liao.ticketsellingsystem.repository.SeatRepository;
+import com.daniel_liao.ticketsellingsystem.event.Event;
+import com.daniel_liao.ticketsellingsystem.event.EventRepository;
 import com.daniel_liao.ticketsellingsystem.section.Section;
 import com.daniel_liao.ticketsellingsystem.section.SectionRepository;
+import com.daniel_liao.ticketsellingsystem.security.User;
+import com.daniel_liao.ticketsellingsystem.ticket.Seat;
+import com.daniel_liao.ticketsellingsystem.ticket.SeatRepository;
 
 
 

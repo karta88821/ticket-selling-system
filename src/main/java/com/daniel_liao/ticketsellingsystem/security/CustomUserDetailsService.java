@@ -5,9 +5,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.daniel_liao.ticketsellingsystem.entity.User;
-import com.daniel_liao.ticketsellingsystem.repository.UserRepository;
-
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired

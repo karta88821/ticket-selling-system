@@ -2,7 +2,7 @@ package com.daniel_liao.ticketsellingsystem;
 
 import java.util.List;
 
-import com.daniel_liao.ticketsellingsystem.entity.Seat;
+import com.daniel_liao.ticketsellingsystem.ticket.Seat;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

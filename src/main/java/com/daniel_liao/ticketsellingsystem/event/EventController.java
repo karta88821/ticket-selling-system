@@ -1,6 +1,5 @@
-package com.daniel_liao.ticketsellingsystem.controller;
+package com.daniel_liao.ticketsellingsystem.event;
 
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,7 +8,6 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,13 +18,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.daniel_liao.ticketsellingsystem.ISectionStatus;
-import com.daniel_liao.ticketsellingsystem.entity.Event;
-import com.daniel_liao.ticketsellingsystem.entity.Seat;
-import com.daniel_liao.ticketsellingsystem.form.EventForm;
-import com.daniel_liao.ticketsellingsystem.repository.EventRepository;
-import com.daniel_liao.ticketsellingsystem.repository.SeatRepository;
 import com.daniel_liao.ticketsellingsystem.section.Section;
 import com.daniel_liao.ticketsellingsystem.section.SectionRepository;
+import com.daniel_liao.ticketsellingsystem.ticket.Seat;
+import com.daniel_liao.ticketsellingsystem.ticket.SeatRepository;
 
 @Controller
 @RequestMapping("/events")
