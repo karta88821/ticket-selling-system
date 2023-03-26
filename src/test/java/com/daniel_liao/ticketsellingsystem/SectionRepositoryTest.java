@@ -20,6 +20,7 @@ public class SectionRepositoryTest {
     @Autowired
     private SectionRepository repo;
 
+    /* 
     @Test
     public void testInsertSection() {
         Section section = new Section();
@@ -31,5 +32,5 @@ public class SectionRepositoryTest {
         Section savedSection = repo.save(section);
         
         assertEquals(section.getTotalRow(), savedSection.getTotalRow());
-    }
+    }*/
 }

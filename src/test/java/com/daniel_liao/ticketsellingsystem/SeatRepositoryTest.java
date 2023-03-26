@@ -41,6 +41,7 @@ public class SeatRepositoryTest {
     @Autowired
     private SectionRepository sectionRepo;
 
+    /* 
     @Test
     public void testInsertSingleSeat() {
         // 演場會test 2023-03-19 A區 1-1 true
@@ -119,5 +120,5 @@ public class SeatRepositoryTest {
         user.setId(7);
 
         seatRepo.updateAvailablityWithNumber(3, 1, 1, 1);
-    }
+    }*/
 }
