@@ -6,7 +6,7 @@ spring:
         password: admin2023
     redis:
         database: 0
-        host: 18.183.124.195
+        host: 127.0.0.1
         port: 6379
         password: 
         timeout: 5000
