@@ -1,6 +1,9 @@
-# Ticket Selling System
+#  Ticket Selling System
 
-This side project create a system for selling tickets for concerts.
+This side project is written in **Java** and **SpringBoot** framework for creating a ticket selling system. 
+**MySQL** database is used for storing data and **Redis** database is used for keeping the data that frequently been used. Moreover, this web server is deployed on the **Docker container** in **AWS EC2**.
+
+## Features
 This project has serveral features as follows:
 - The user can login in to get tickets. If the user does not have an account, they can register an account on the system.
 - The user can get a ticket for an event and view tickets they own.
@@ -17,6 +20,14 @@ This project has serveral features as follows:
 
 ## Demo
 http://ec2-18-183-124-195.ap-northeast-1.compute.amazonaws.com/home
+
+## Example Accounts
+|Account                |Password               |  Role|
+|---                    |-----------------------|-----------------------------|
+|superadmin             |admin2023              |ADMIN                        |
+|account1               |password               |NORMAL                       |
+
+
 
 ## End points
 - /home
