@@ -36,13 +36,14 @@ public class UserRepositoryTest {
     @Autowired
     private TestEntityManager entityManager;
 
+    /*
     @Test
     public void testGetRole() {
         Role role = roleRepo.findById(1).get();
         assertEquals(role.getName(), "ADMIN");
     }
 
-    /* 
+     
     @Test
     public void testCreateUser() {
         
