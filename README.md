@@ -10,7 +10,9 @@ This project has serveral features as follows:
 - Java
 - SpringBoot, Spring Security, Spring Jpa 
 - Thymeleaf, Bootstrape
-- MySQL
+- MySQL (Amazon RDS)
+- Redis
+- Docker
 
 ## End points
 - /login
@@ -26,6 +28,9 @@ This project has serveral features as follows:
 - /tickets/events/event_id
 - /tickets/checkout
 - /tickets/finish
+
+## System Structure
+![image](https://github.com/karta88821/ticket-selling-system/blob/main/system-structure.png)
 
 ## Database Schema
 
