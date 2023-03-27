@@ -35,7 +35,7 @@ public interface SeatRepository extends JpaRepository<Seat, Integer> {
     @Transactional
     @Modifying
     @Query(
-        value = "UPDATE seat SET availability = 0 WHERE event_id = ?1 AND section_id = ?2 AND row = ?3 AND number = ?4", 
+        value = "UPDATE seat SET availability = 0 WHERE event_id = ?1 AND section_id = ?2 AND seat_row = ?3 AND seat_number = ?4", 
         nativeQuery = true)
     void updateAvailablityWithNumber(Integer eventID, Integer sectionID, Integer row, Integer number);
 }

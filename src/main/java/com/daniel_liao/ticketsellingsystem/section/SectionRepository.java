@@ -14,6 +14,5 @@ public interface SectionRepository extends JpaRepository<Section, Integer> {
         // 找出那些沒有被這個event_id所選擇的sections
         value = "SELECT * FROM section WHERE id NOT IN (SELECT section_id FROM seat WHERE event_id = ?1 GROUP BY section_id)", 
         nativeQuery = true)
-
     List<Section> findSectionsEventNotSelect(Integer eventID);
 }

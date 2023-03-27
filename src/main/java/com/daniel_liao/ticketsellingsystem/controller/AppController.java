@@ -1,7 +1,5 @@
 package com.daniel_liao.ticketsellingsystem.controller;
 
-import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -11,14 +9,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.daniel_liao.ticketsellingsystem.section.Section;
-import com.daniel_liao.ticketsellingsystem.section.SectionRepository;
-import com.daniel_liao.ticketsellingsystem.section.SectionService;
 import com.daniel_liao.ticketsellingsystem.security.RoleRepository;
 import com.daniel_liao.ticketsellingsystem.security.User;
 import com.daniel_liao.ticketsellingsystem.security.UserRepository;
@@ -34,12 +27,6 @@ public class AppController {
 
     @Autowired
     private RoleRepository roleRepo;
-
-    @Autowired
-    private SectionRepository sectionRepo;
-
-    @Autowired
-    private SectionService sectionService;
 
     @GetMapping("/home")
     public String homePage(Model model) {

@@ -17,11 +17,13 @@ import com.daniel_liao.ticketsellingsystem.ticket.Ticket;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class Event implements Serializable {
     
     @Id

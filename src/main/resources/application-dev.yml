@@ -1,7 +1,12 @@
 spring:
+    #jpa:
+    #    properties:
+    #        hibernate:
+    #            show_sql: true
+    #            format_sql: true
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/tickets_db
+        url: jdbc:mysql://localhost:3306/mydatabase
         username: root
         password: admin2023
     redis:
@@ -18,3 +23,9 @@ spring:
                 min-idle: 0
     thymeleaf:
         prefix: classpath:/templates/
+
+#logging:
+#  level:
+ #   org:
+  #    hibernate:
+   #     type: trace

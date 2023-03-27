@@ -36,7 +36,7 @@ public class UserRepositoryTest {
     @Autowired
     private TestEntityManager entityManager;
 
-    /*
+    /* 
     @Test
     public void testGetRole() {
         Role role = roleRepo.findById(1).get();
@@ -66,9 +66,7 @@ public class UserRepositoryTest {
         assertEquals(savedUser.getAccount(), user.getAccount());
         assertEquals(savedUser.getRole().getName(), normalRole.getName());
     }
-    */
 
-    /*
     @Test
     public void testFindUserByAccount() {
         String account = "m10304";

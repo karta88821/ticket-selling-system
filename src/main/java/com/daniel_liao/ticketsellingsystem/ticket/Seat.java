@@ -18,20 +18,22 @@ import com.daniel_liao.ticketsellingsystem.section.Section;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class Seat implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
+    @Column(name = "seat_row")
     private Integer row;
 
-    @Column
+    @Column(name = "seat_number")
     private Integer number;
 
     @Column
