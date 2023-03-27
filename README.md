@@ -8,16 +8,20 @@ This project has serveral features as follows:
 
 ## Development Tools
 - Java
-- SpringBoot, Spring Security, Spring Jpa 
+- SpringBoot
 - Thymeleaf, Bootstrape
 - MySQL (Amazon RDS)
 - Redis
+- AWS EC2 (Virtual Machine)
 - Docker
 
+## Demo
+http://ec2-18-183-124-195.ap-northeast-1.compute.amazonaws.com/home
+
 ## End points
+- /home
 - /login
 - /register
-- /home
 - /users/all
 - /sections/all
 - /events/all
