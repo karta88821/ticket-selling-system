@@ -1,4 +1,4 @@
-#  Ticket Selling System
+# Ticketing System
 
 This side project is written in **Java** and **SpringBoot** framework for creating a ticket selling system. 
 **MySQL** database is used for storing data and **Redis** database is used for keeping the data that frequently been used. Moreover, this web server is deployed on the **Docker container** in **AWS EC2**.
