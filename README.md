@@ -19,7 +19,7 @@ This project has serveral features as follows:
 - Docker
 
 ## Demo
-http://ec2-18-183-124-195.ap-northeast-1.compute.amazonaws.com/home
+http://13.231.20.36/home
 
 ## Example Accounts
 |Account                |Password               |  Role|
