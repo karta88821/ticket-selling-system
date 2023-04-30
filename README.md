@@ -44,7 +44,7 @@ http://13.231.20.36/home
 - /tickets/checkout
 - /tickets/finish
 
-## System Structure
+## System Architecture
 ![image](https://github.com/karta88821/ticket-selling-system/blob/main/system-structure.png)
 
 ## Database Schema
