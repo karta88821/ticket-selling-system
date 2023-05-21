@@ -1,4 +1,6 @@
 spring:
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://my-database.cuuwyb3ikb1c.ap-southeast-2.rds.amazonaws.com:3306/mydatabase
