@@ -49,7 +49,7 @@ http://13.231.20.36/home
 
 ## Database Schema
 
-![image](https://github.com/karta88821/ticket-selling-system/blob/main/db_schema.png.png)
+![image](https://github.com/karta88821/ticket-selling-system/blob/main/db_schema.png)
 
 ## Home page
 
